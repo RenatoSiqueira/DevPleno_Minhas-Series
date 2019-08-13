@@ -1,0 +1,29 @@
+<% include ../partials/header.ejs %>
+
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2>Séries</h2>
+                <p class="lead">Todas as séries Cadastradas</p>
+                <a href="/series/nova" class="btn btn-info"> Nova Série</a>
+                <div>
+                    <table class="table table-hover">
+                        <% series.forEach( serie => { %>
+                        <tr>
+                            <td><%= serie.name %></td>
+                            <td><%= labels.filter( label => label.id === serie.status)[0].name %></td>
+                            <td>
+                                <a href="/series/excluir/<%= serie._id %>" class="btn btn-danger">Excluir</a>
+                                <a href="/series/editar/<%= serie._id %>" class="btn btn-info">Editar</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<% include ../partials/footer.ejs %>
