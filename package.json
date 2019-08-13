@@ -1,0 +1,15 @@
+{
+  "name": "DevPleno_Minhas-Series",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/RenatoSiqueira/DevPleno_Minhas-Series.git",
+  "author": "Renato Siqueira <renatoelysiqueira@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.9"
+  }
+}
