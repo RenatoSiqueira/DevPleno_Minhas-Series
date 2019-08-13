@@ -9,6 +9,9 @@
                     <div class="form-group">
                         <label for="name">Nome da Série</label>
                         <input type="text" id="name" name="name" class="form-control" placeholder="Informe o Nome">
+                        <% if(errors && errors.indexOf('name') >= 0) { %>
+                        <small class="form-text text-muted">Preencha o Nome da Série</small>
+                        <% } %>
                     </div>
                     <div class="form-group">
                         <label for="status">Situação:</label>
