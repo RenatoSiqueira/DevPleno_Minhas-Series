@@ -4,6 +4,8 @@ const app = express()
 const path = require('path')
 const bodyParser = require('body-parser')
 
+const pages = require('./routes/pages')
+
 const port = process.env.PORT
 const mongo = process.env.MONGODB
 
@@ -15,9 +17,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
-app.get('/', (req, res) => {
-    res.send('Home')
-})
+app.use('/', pages)
 
 mongoose
     .connect(mongo, { useNewUrlParser: true })
