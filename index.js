@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 })
 
 mongoose
-    .connect(mongo, { useMongoClient: true })
+    .connect(mongo, { useNewUrlParser: true })
     .then(() => {
         app.listen(port, () => console.log('Server Started on ' + port))
     })
