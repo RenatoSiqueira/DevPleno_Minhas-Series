@@ -11,6 +11,7 @@
 - Validation
 - Callback
 - Async/Await
+- Paginação
 
 
 ### Instruções Docker
