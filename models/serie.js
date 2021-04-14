@@ -8,6 +8,8 @@ const SerieSchema = mongoose.Schema({
         type: String,
         enumValues: ['to-watch', 'watching', 'watched']
     },
+    poster: String,
+    background: String,
     comments: [String]
 })
 const Serie = mongoose.model('Serie', SerieSchema)

@@ -1,17 +1,24 @@
-<% include partials/header.ejs %>
-
-<section id="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h2>Sobre</h2>
-                <p class="lead">Uma headline aqui</p>
-                <ul>
-                    <li>Uma lista aqui</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<% include partials/footer.ejs %>
+<%- include('partials/header') %>
+    <div class="panel active">
+      <div class="inner split">
+          <div>
+              <section>
+                  <h2>Renato Siqueira</h2>
+                  <p>Projeto Minhas Séries adaptado com Template Multiverse by HTML5 UP.<br/>
+                  Este projeto utiliza Express + EJS + MongoDB + Mongoose<br/>
+                  Projeto do Curso Fullstack Master @Devpleno</p>
+              </section>
+              <section>
+                  <h2>Veja Mais em </h2>
+                  <ul class="icons">
+                      <li><a href="https://github.com/renatosiqueira" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>                                                    
+                      <li><a href="https://www.linkedin.com/in/renatosiqueira/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                  </ul>
+              </section>
+              <p class="copyright">
+                  &copy; Renato Siqueira. Design: <a href="http://html5up.net">HTML5 UP</a>.
+              </p>
+          </div>
+      </div>
+  </div>
+<%- include('partials/footer') %>

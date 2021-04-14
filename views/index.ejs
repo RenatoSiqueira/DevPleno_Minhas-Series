@@ -1,10 +1,17 @@
-<% include partials/header.ejs %>
-
-<header class="bg-info text-white">
-    <div class="container text-center">
-        <h1><img src="images/logo.png" alt="Minhas Séries" /></h1>
-        <p class="lead">Gerencie suas séries com Express + Mongo + NodeJS</p>
-    </div>
-</header>
-
-<% include partials/footer.ejs %>
+<%- include('partials/header') %>
+				<!-- Main -->
+					<div id="main">
+						<% results.data.forEach( e => { %>
+							<article class="thumb">
+								<a class='image'>
+									<img src="<%= e.background %>" alt=""/>
+								</a>
+									<h2 style="border: dashed black 1rem; background-color: black;">
+										<a href='/info/<%= e.id %>'>
+										<%= e.name %> - <%= labels.filter( label => label.id === e.status)[0].name %>
+										</a>
+									</h2>
+								</article>
+						<% }) %>
+					</div>
+<%- include('partials/footer') %>

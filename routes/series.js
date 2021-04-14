@@ -8,6 +8,7 @@ const models = {
     Serie
 }
 
+router.get('/sobre', seriesController.about)
 router.get('/', seriesController.index.bind(null, models))
 
 router.get('/nova', seriesController.novaForm)

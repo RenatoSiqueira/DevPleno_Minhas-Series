@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+
+<div class='panel active'>
+    <h2>Nova Série</h2>
+    <form method="POST">
+        <label for="name">Nome da Série</label>
+        <input type="text" id="name" name="name" placeholder="Informe o Nome">
+        <% if(errors && errors.indexOf('name') >= 0) { %>
+        <small class="text-muted">Preencha o Nome da Série</small>
+        <% } %>
+
+        <label for="status">Situação:</label>
+        <select name="status" id="status">
+            <option value="to-watch">Para Assistir</option>
+            <option value="watching">Assistindo</option>
+            <option value="watched">Assistido</option>
+        </select>
+
+        <div style="display: flex; margin-top: 1rem; align-items: center;">
+            <button type="submit">Salvar</button>
+            <a href="/" style="margin-left: 1rem;">
+                Voltar
+            </a>
+        </div>
+    </form>
+</div>
+
+<%- include('partials/footer') %>

@@ -4,7 +4,6 @@ const app = express()
 const path = require('path')
 const bodyParser = require('body-parser')
 
-const pages = require('./routes/pages')
 const series = require('./routes/series')
 
 const port = process.env.PORT
@@ -18,11 +17,10 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
-app.use('/', pages)
-app.use('/series', series)
+app.use('/', series)
 
 mongoose
-    .connect(mongo, { useNewUrlParser: true })
+    .connect(mongo, { useUnifiedTopology: true, useNewUrlParser: true })
     .then(() => {
         app.listen(port, () => console.log('Server Started on ' + port))
     })
