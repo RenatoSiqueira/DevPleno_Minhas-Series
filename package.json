@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "install": "yarn install",
     "start": "node index.js"
   },
   "repository": "https://github.com/RenatoSiqueira/DevPleno_Minhas-Series.git",
