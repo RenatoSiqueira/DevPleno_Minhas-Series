@@ -19,11 +19,11 @@ app.use(express.static('public'))
 
 app.use('/', series)
 
-mongoose
-    .connect(mongo, { useUnifiedTopology: true, useNewUrlParser: true })
-    .then(() => {
-        app.listen(port, () => console.log('Server Started on ' + port))
-    })
-    .catch(e => {
-        console.log(e)
-    })
+// mongoose
+//     .connect(mongo, { useUnifiedTopology: true, useNewUrlParser: true })
+//     .then(() => {
+app.listen(port, () => console.log('Server Started on ' + port))
+    // })
+    // .catch(e => {
+    //     console.log(e)
+    // })
