@@ -15,22 +15,15 @@ mongoose.Promise = global.Promise
 app.use(bodyParser.urlencoded({ extended: true }))
 app.set('views', path.join(__dirname, './views'))
 app.set('view engine', 'ejs')
-// app.use(express.static('public'))
-app.use('/static', express.static(__dirname + '/public'));
+app.use(express.static('public'))
 
 app.use('/', series)
 
-try {
-    mongoose.connect(mongo, { useUnifiedTopology: true, useNewUrlParser: true })
-    app.listen(port, () => console.log('Server Started on ' + port))
-} catch (error) {
-    console.log(error)
-}
-// mongoose
-//     .connect(mongo, { useUnifiedTopology: true, useNewUrlParser: true })
-//     .then(() => {
-//          app.listen(port, () => console.log('Server Started on ' + port))
-//       })
-//       .catch(e => {
-//           console.log(e)
-//      })
+mongoose
+    .connect(mongo, { useUnifiedTopology: true, useNewUrlParser: true })
+    .then(() => {
+        app.listen(port, () => console.log('Server Started on ' + port))
+    })
+    .catch(e => {
+        console.log(e)
+    })
