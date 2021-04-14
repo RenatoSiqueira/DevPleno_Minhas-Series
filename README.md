@@ -1,4 +1,5 @@
 # Minhas-Séries - DevPleno
+[Versão Online](http://minhasseries.renatosiqueira.dev/)
 
 ### Minhas-Séries [v2 Version]
 
