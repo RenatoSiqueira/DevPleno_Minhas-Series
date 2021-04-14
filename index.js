@@ -20,11 +20,17 @@ app.use('/static', express.static(__dirname + '/public'));
 
 app.use('/', series)
 
+try {
+    mongoose.connect(mongo, { useUnifiedTopology: true, useNewUrlParser: true })
+    app.listen(port, () => console.log('Server Started on ' + port))
+} catch (error) {
+    console.log(error)
+}
 // mongoose
 //     .connect(mongo, { useUnifiedTopology: true, useNewUrlParser: true })
 //     .then(() => {
-app.listen(port, () => console.log('Server Started on ' + port))
-    // })
-    // .catch(e => {
-    //     console.log(e)
-    // })
+//          app.listen(port, () => console.log('Server Started on ' + port))
+//       })
+//       .catch(e => {
+//           console.log(e)
+//      })
