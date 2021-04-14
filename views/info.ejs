@@ -1,37 +1,35 @@
 <%- include('partials/header') %>
 
 <div class='panel active'>
-    <div>
-        <form method="POST">
-                <div style="display: flex; flex-direction: column; text-align: center;">
-                    <h1><%= serie.name %></h1>
-                    <h2>Sobre a Série</h2>
-                    <img src='<%= serie.poster %>' style="height: -webkit-fill-available;" />
-                </div>
-            </div>
-            <div>
-                <textarea name="comentario" id="comentario" cols="10" rows="2"></textarea>                
-            </div>
-            <div style="display: flex; margin-top: 1rem; align-items: center;">
-                <button type="submit">Adicionar Comentário</button>
-                <a href="/excluir/<%= serie.id %>" class='buttonClass' style="margin-left: 1rem;">
-                    Excluir
-                </a>
-                <a href="/" class='buttonClass' style="margin-left: 1rem;">
-                    Voltar
-                </a>
-            </div>
-
-            <div class="card">
-                <ul class="list-group list-group-flush">
-                    <% serie.comments.forEach( c => { %>
-                    <li class="list-group-item"><%= c %></li>
-                    <% })%>
-                </ul>
-            </div>
-            
-        </form>
-    </div>
+    <form method="POST">
+        <div style="display: flex; flex-direction: column; text-align: center;">
+            <h1><%= serie.name %></h1>
+            <h2>Sobre a Série</h2>
+        </div>
+        <div style="text-align: center;">
+            <img src='<%= serie.poster %>'/>
+        </div>
+        <div>
+            Qual seu Comentário?
+            <textarea name="comentario" id="comentario" cols="10" rows="2"></textarea>                
+        </div>
+        <div class='buttons'>
+            <button type="submit">Adicionar Comentário</button>
+            <a href="/excluir/<%= serie.id %>" class='buttonClass'>
+                Excluir
+            </a>
+            <a href="/" class='buttonClass'>
+                Voltar
+            </a>
+        </div>
+        <div style="margin-top: 1rem;">
+            <ul>
+                <% serie.comments.forEach( c => { %>
+                <li><%= c %></li>
+                <% })%>
+            </ul>
+        </div>
+    </form>
 </div>
 
 <%- include('partials/footer.ejs') %>

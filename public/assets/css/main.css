@@ -1208,11 +1208,22 @@ table.alt tfoot {
   background: rgba(36, 38, 41, 0.975);
   /* bottom: 4em; */
   left: 0;
-  max-height: calc(80vh - 4em);
-  overflow-y: auto;
-  position: fixed;
+  /* max-height: calc(80vh - 4em); */
+  /* overflow-y: auto; */
+  /* position: fixed; */
   width: 100%;
   z-index: 10001;
+}
+
+/* Adicionei */
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  align-items: center;
+  width: 100%;
 }
 
 .panel.active {

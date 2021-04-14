@@ -12,7 +12,7 @@ const getSerieImage = async (name) => {
         const url = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=pt-BR&query=${name}&page=1&include_adult=false`;
         const res = await axios.get(url);
         return {
-            poster: `//image.tmdb.org/t/p/original${res.data.results[0].poster_path}`,
+            poster: `//image.tmdb.org/t/p/w300${res.data.results[0].poster_path}`,
             background: `//image.tmdb.org/t/p/original${res.data.results[0].backdrop_path}`,
         };
     } catch (err) { }
